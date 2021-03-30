@@ -1,14 +1,41 @@
-@import 
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
 /* ESTILIZAÇÃO GERAL */
+* {
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+    margin: 0px;
+}
 
+body{
+    background-color: #E8F4EB;
+}
 
+header{
+    display: block;
+    background-color: #5c494d;
+    color: #E8F4EB;
+    text-align: center;
+    padding: 30px;
+}
 /* ESTILIZAÇÃO GERAL */
 
 
 /* ESTILIZAÇÃO TORRE */
-
-
+#torres{
+    display: flex; 
+    flex-direction: column-reverse; 
+    align-items: center;
+    flex-flow: row wrap;
+}
+#torreUm, #torreDois, #torreTres{
+    background-color: #000;
+    height: 300px;
+    width: 20px;
+    margin: 230px auto 0px;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+}
 /* ESTILIZAÇÃO TORRE */
 
 
@@ -20,3 +47,4 @@
 
 
 @media only screen and (min-width: 768px) {
+}
