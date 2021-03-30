@@ -32,6 +32,18 @@ addDisc('disc4', '#329237');
 
 /* SELEÇÃO DAS TORRES */
 
+let selectDestinyTower = false;
+
+const tower = document.querySelectorAll("#torres");
+
+const selectTower = (event) => {
+    console.log(event.target);
+}
+
+for (let i = 0; i < tower.length; i++) {
+    tower[i].addEventListener("click", selectTower);
+}
+
 
 /* SELEÇÃO DAS TORRES */
 
