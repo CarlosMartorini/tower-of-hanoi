@@ -41,6 +41,11 @@ header{
 
 /* ESTILIZAÇÃO DISCOS */
 
+#discs{
+    height: 50px;
+    border-radius: 50px;
+    
+}
 
 /* ESTILIZAÇÃO DISCOS */
 
