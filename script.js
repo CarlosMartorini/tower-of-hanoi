@@ -25,21 +25,20 @@ torreTres()
 
 /* CRIAÇÃO DOS DISCOS */
 
-const getContainer = document.getElementById('container');
+const getTower = document.getElementById('torreUm');
 
 const addDisc = (disc, color, width) => {
     disc = document.createElement('div');
-    getContainer.appendChild(disc);
+    getTower.appendChild(disc);
+    disc.setAttribute("id", "discs");
     disc.style.backgroundColor = color;
     disc.style.width = width;
-    disc.style.height = '20px';
-    disc.style.borderRadius = '10px';
 }
 
-addDisc('disc1', '#a52a5a', '40px');
-addDisc('disc2', '#000090', '60px');
-addDisc('disc3', '#9400d3', '80px');
-addDisc('disc4', '#329237', '100px');
+addDisc('disc1', '#a52a5a', '180px');
+addDisc('disc2', '#000090', '220px');
+addDisc('disc3', '#9400d3', '260px');
+addDisc('disc4', '#329237', '300px');
 
 /* CRIAÇÃO DOS DISCOS */
 
