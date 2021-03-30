@@ -1,44 +1,31 @@
 /* CRIAÇÃO DAS TORRES */
-function torreUm(){
+function criarTorre(torreId){
     let novaTorre = document.createElement("div");
-    novaTorre.setAttribute("id", "torreUm");
+    novaTorre.setAttribute("id", torreId);
     let destino = document.getElementById("torres");
     destino.appendChild(novaTorre);
 }
-torreUm()
-function torreDois(){
-    let novaTorre = document.createElement("div")
-    novaTorre.setAttribute("id", "torreDois");
-    let destino = document.getElementById("torres");
-    destino.appendChild(novaTorre);
-}
-torreDois()
-function torreTres(){
-    let novaTorre = document.createElement("div")
-    novaTorre.setAttribute("id", "torreTres");
-    let destino = document.getElementById("torres");
-    destino.appendChild(novaTorre);
-}
-torreTres()
+criarTorre("torreUm");
+criarTorre("torreDois");
+criarTorre("torreTres");
 /* CRIAÇÃO DAS TORRES */
 
 
 /* CRIAÇÃO DOS DISCOS */
 
-const getTower = document.getElementById('torreUm');
+const getTower = document.getElementById('discos');
 
-const addDisc = (disc, color, width) => {
+const addDisc = (discId, color) => {
     disc = document.createElement('div');
     getTower.appendChild(disc);
-    disc.setAttribute("id", "discs");
+    disc.setAttribute("id", discId);
     disc.style.backgroundColor = color;
-    disc.style.width = width;
 }
 
-addDisc('disc1', '#a52a5a', '180px');
-addDisc('disc2', '#000090', '220px');
-addDisc('disc3', '#9400d3', '260px');
-addDisc('disc4', '#329237', '300px');
+addDisc('disc1', '#a52a5a');
+addDisc('disc2', '#000090');
+addDisc('disc3', '#9400d3');
+addDisc('disc4', '#329237');
 
 /* CRIAÇÃO DOS DISCOS */
 
