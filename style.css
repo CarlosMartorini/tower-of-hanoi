@@ -26,7 +26,7 @@ header{
     display: flex; 
     flex-direction: column-reverse; 
     align-items: center;
-    flex-flow: row nowrap;
+    flex-flow: row wrap;
 }
 #torreUm, #torreDois, #torreTres{
     background-color: #000;
