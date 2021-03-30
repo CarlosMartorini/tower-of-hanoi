@@ -1,0 +1,34 @@
+/* CRIAÇÃO DAS TORRES */
+
+
+/* CRIAÇÃO DAS TORRES */
+
+
+/* CRIAÇÃO DOS DISCOS */
+
+
+/* CRIAÇÃO DOS DISCOS */
+
+
+/* SELEÇÃO DAS TORRES */
+
+
+/* SELEÇÃO DAS TORRES */
+
+
+/* LÓGICA DE JOGO / VERIFICAÇÕES */
+
+
+/* LÓGICA DE JOGO / VERIFICAÇÕES */
+
+
+/* CONDIÇÃO DE VITÓRIA */
+
+
+/* CONDIÇÃO DE VITÓRIA */
+
+
+/* BOTÃO PARA REINICIAR O JOGO */
+
+
+/* BOTÃO PARA REINICIAR O JOGO */
