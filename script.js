@@ -1,9 +1,19 @@
 /* CRIAÇÃO DAS TORRES */
-function criarTorre(torreId){
+function criarColunaDaTorre(torreId){
     let novaTorre = document.createElement("div");
     novaTorre.setAttribute("id", torreId);
     let destino = document.getElementById("torres");
     destino.appendChild(novaTorre);
+}
+criarColunaDaTorre("torreUm");
+criarColunaDaTorre("torreDois");
+criarColunaDaTorre("torreTres");
+
+function criarTorre(torreId){
+    let img = document.createElement("IMG");
+    img.src = "/assets/torre.png";
+    img.setAttribute("id", "torreBG");
+    document.getElementById(torreId).appendChild(img);
 }
 criarTorre("torreUm");
 criarTorre("torreDois");
@@ -13,7 +23,7 @@ criarTorre("torreTres");
 
 /* CRIAÇÃO DOS DISCOS */
 
-const getTower = document.getElementById('discos');
+const getTower = document.getElementById('torreUm');
 
 const addDisc = (discId, color) => {
     disc = document.createElement('div');
@@ -29,6 +39,11 @@ addDisc('disc4', '#329237');
 
 /* CRIAÇÃO DOS DISCOS */
 
+/* POSICIONAMENTO DOS DISCOS */
+
+
+
+/* POSICIONAMENTO DOS DISCOS */
 
 /* SELEÇÃO DAS TORRES */
 
