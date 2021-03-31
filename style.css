@@ -42,6 +42,8 @@ header{
     flex-direction: column-reverse; 
     align-items: center;
     flex-flow: row wrap;
+    position: absolute;
+	bottom: 20px;
 }
 #torreBG{
     display: flex;
@@ -51,61 +53,72 @@ header{
     background-color: #000;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
+    z-index: 1;
+}
+
+#torreBackground{
+    display: flex;
+    position: absolute;
+    flex-flow: wrap;
+    bottom: 20px;
+    width: 99vw;
 }
 
 #torreUm, #torreDois, #torreTres{
     display: flex;
     height: 300px;
     width: 33vw;
-    flex-direction: column;
+    flex-direction: column-reverse;
+    z-index: 2;
 }
 
 #pisoTorre{
-    background-color: #000;
+    background-color: #5c494d;
     width: 100vw;
     height: 20px;
+    position: absolute;
+	bottom: 0;
+    z-index: 1;
 }
 /* ESTILIZAÇÃO TORRE */
 
 
 /* ESTILIZAÇÃO DISCOS */
+#disc1, #disc2, #disc3, #disc4{
+    border-radius: 50px;
+    margin: 1px auto;
+    height: 25px;
+    z-index: 3;
+}
+
 #disc1{
     width: 15vw;
-    height: 25px;
-    border-radius: 50px;
-    margin: 1px auto;
 }
 #disc2{
-    width: 20vw;
-    height: 25px;
-    margin: 1px auto;
-    border-radius: 50px;
-    
+    width: 20vw;   
 }
 #disc3{
     width: 25vw;
-    height: 25px;
-    margin: 1px auto;
-    border-radius: 50px;
 }
 #disc4{
     width: 30vw;
-    height: 25px;
-    margin: 1px auto;
-    border-radius: 50px;
 }
 /* ESTILIZAÇÃO DISCOS */
 
 
 
 @media only screen and (min-width: 768px) {
+    #torres, #torreBackground{
+        bottom: 30px;
+    }
+    
     #torreBG{
-        height: 400px;
         width: 25px;
-        margin: 200px auto 0px;
+        height: 300px;
+        margin: 0 auto;
     }    
     #pisoTorre{
-        background-color: #000;
+        background-color: #5c494d;
         width: 100vw;
         height: 30px;
     }
@@ -121,4 +134,20 @@ header{
         height: 70px;
         font-size: 40px;
     }
-}
+    #disc1, #disc2, #disc3, #disc4{
+        border-radius: 50px;
+        margin: 0px auto 2px;
+        height: 30px;
+    }
+    #disc1{
+        width: 10vw;
+    }
+    #disc2{
+        width: 15vw;   
+    }
+    #disc3{
+        width: 20vw;
+    }
+    #disc4{
+        width: 25vw;
+    }
