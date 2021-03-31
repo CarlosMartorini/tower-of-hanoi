@@ -50,21 +50,32 @@ addDisc('disc4', '#329237');
 let selectDestinyTower = false;
 let counter = 1;
 
-const tower = document.querySelectorAll("#torres");
+const towerOne = document.querySelectorAll("#torreUm");
+const towerTwo = document.querySelectorAll("#torreDois");
+const towerThree = document.querySelectorAll("#torreTres");
+
+let towerSelectedOrigin;
+let towerSelectedDestiny;
 
 const selectTower = (event) => {
+
+    let towerSelected = event.currentTarget;
+   
+
     console.log(event.currentTarget, 
                 event.currentTarget.childElementCount, 
-                event.currentTarget.lastElementChild,
-                event.currentTarget.lastElementChild.clientWidth,
+                event.currentTarget.childNodes[1],
                 counter, 
                 selectDestinyTower
                 );
 
     if (counter === 1) {
         counter++;
+        towerSelectedOrigin = towerSelected;
     } else if (counter === 2) {
         counter = 1;
+        towerSelectedDestiny = towerSelected;
+        changeTower(towerSelectedOrigin, towerSelectedDestiny);
         selectDestinyTower = false;
     }
 
@@ -73,8 +84,16 @@ const selectTower = (event) => {
     }
 }
 
-for (let i = 0; i < tower.length; i++) {
-    tower[i].addEventListener("click", selectTower);
+for (let i = 0; i < towerOne.length; i++) {
+    towerOne[i].addEventListener("click", selectTower);
+}
+
+for (let i = 0; i < towerTwo.length; i++) {
+    towerTwo[i].addEventListener("click", selectTower);
+}
+
+for (let i = 0; i < towerThree.length; i++) {
+    towerThree[i].addEventListener("click", selectTower);
 }
 
 /* SELEÇÃO DAS TORRES */
@@ -82,11 +101,12 @@ for (let i = 0; i < tower.length; i++) {
 
 /* LÓGICA DE JOGO / VERIFICAÇÕES */
 
-const changeTower = (condition, destiny) => { //destiny = event.currentTarget
-    if (condition === true) {
-        let getDisc = document.getElementById('discos');
-        let getLastDisc = getDisc.lastElementChild;
-        getLastDisc.appendChild(destiny);
+const changeTower = (origin, destiny) => { 
+    let getOrigin = origin;
+    
+    if (selectDestinyTower === true) {
+        let getLastDisc = getOrigin.childNodes[1];
+        destiny.appendChild(getLastDisc);
     }
     
 }
@@ -98,7 +118,7 @@ const checkWidthDisc = (origin, destiny) => {
     if (getDestiny.lastElementChild.clientWidth > getOrigin.lastElementChild.clientWidth) {
         changeTower(selectDestinyTower, selectTower);
     } else if (getDestiny.lastElementChild.clientWidth < getOrigin.lastElementChild.clientWidth) {
-        //permanecer na mesma coluna
+        console.log('Não pode ser efetuada a troca');
     }
 }
 
