@@ -75,13 +75,16 @@ const selectTower = (event) => {
     } else if (counter === 2) {
         counter = 1;
         towerSelectedDestiny = towerSelected;
-        changeTower(towerSelectedOrigin, towerSelectedDestiny);
+        checkWidthDisc(towerSelectedOrigin, towerSelectedDestiny);
+        // changeTower(towerSelectedOrigin, towerSelectedDestiny);
         selectDestinyTower = false;
     }
 
     if (counter === 2) {
         selectDestinyTower = true;
     }
+
+    
 }
 
 for (let i = 0; i < towerOne.length; i++) {
@@ -112,12 +115,14 @@ const changeTower = (origin, destiny) => {
 }
 
 const checkWidthDisc = (origin, destiny) => {
-    let getOrigin = document.getElementById(origin)
-    let getDestiny = document.getElementById(destiny);
+    let getOrigin = origin
+    let getDestiny = destiny;
     
-    if (getDestiny.lastElementChild.clientWidth > getOrigin.lastElementChild.clientWidth) {
-        changeTower(selectDestinyTower, selectTower);
-    } else if (getDestiny.lastElementChild.clientWidth < getOrigin.lastElementChild.clientWidth) {
+    if (getDestiny.childNodes[1] === undefined) {
+        changeTower(origin, destiny);
+    } else if (getDestiny.childNodes[1].clientWidth > getOrigin.childNodes[1].clientWidth) {
+        changeTower(origin, destiny);
+    } else if (getDestiny.childNodes[1].clientWidth < getOrigin.childNodes[1].clientWidth) {
         console.log('Não pode ser efetuada a troca');
     }
 }
@@ -128,8 +133,8 @@ const checkWidthDisc = (origin, destiny) => {
 /* CONDIÇÃO DE VITÓRIA */
 
 const win = () => {
-    let getTowerThree = document.getElementById("torreTres");
-    if (getTowerThree.childElementCount === 4) {
+    let getTowerThree = towerThree;
+    if (getTowerThree.childElementCount === 5) {
         console.log("You Win!!!");
     }
 }
