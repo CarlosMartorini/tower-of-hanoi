@@ -15,9 +15,9 @@ function criarTorre(torreId){
     img.setAttribute("id", "torreBG");
     document.getElementById(torreId).appendChild(img);
 }
-criarTorre("torreUm");
-criarTorre("torreDois");
-criarTorre("torreTres");
+criarTorre("torreBackground");
+criarTorre("torreBackground");
+criarTorre("torreBackground");
 /* CRIAÇÃO DAS TORRES */
 
 
