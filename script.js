@@ -67,24 +67,37 @@ for (let i = 0; i < tower.length; i++) {
 
 /* LÓGICA DE JOGO / VERIFICAÇÕES */
 
-if (selectDestinyTower === true) {
-    //se estiver na torre destino para ser selecionado
-    //quando selecionado a torre
-    //o ultimo filho deve trocar de elemento pai com appendChild
+const changeTower = (condition, destiny) => { //destiny = event.currentTarget
+    if (condition === true) {
+        let getDisc = document.getElementById('discos');
+        let getLastDisc = getDisc.lastElementChild;
+        getLastDisc.appendChild(destiny);
+    }
+    
 }
 
-//quando selecionado a torre destino
-//se o tamanho do ultimo elemento filho for menor que o ultimo elemento na torre destino
-//não efetuar a troca
-//se não efetuar a troca
+const checkWidthDisc = (origin, destiny) => {
+    let getOrigin = document.getElementById(origin)
+    let getDestiny = document.getElementById(destiny);
+    
+    if (getDestiny.lastElementChild.clientWidth > getOrigin.lastElementChild.clientWidth) {
+        changeTower(selectDestinyTower, selectTower);
+    } else if (getDestiny.lastElementChild.clientWidth < getOrigin.lastElementChild.clientWidth) {
+        //permanecer na mesma coluna
+    }
+}
 
 /* LÓGICA DE JOGO / VERIFICAÇÕES */
 
 
 /* CONDIÇÃO DE VITÓRIA */
 
-//se a torreTres estiver com quatro filhos 
-//jogador venceu
+const win = () => {
+    let getTowerThree = document.getElementById("torreTres");
+    if (getTowerThree.childElementCount === 4) {
+        console.log("You Win!!!");
+    }
+}
 
 /* CONDIÇÃO DE VITÓRIA */
 
