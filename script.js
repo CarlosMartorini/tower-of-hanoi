@@ -62,7 +62,8 @@ const selectTower = (event) => {
     let towerSelected = event.currentTarget;
    
 
-    console.log(event.currentTarget, 
+    console.log(towerThree,
+                event.currentTarget, 
                 event.currentTarget.childElementCount, 
                 event.currentTarget.childNodes,
                 counter, 
@@ -76,14 +77,12 @@ const selectTower = (event) => {
         counter = 1;
         towerSelectedDestiny = towerSelected;
         checkWidthDisc(towerSelectedOrigin, towerSelectedDestiny);
-        // changeTower(towerSelectedOrigin, towerSelectedDestiny);
         selectDestinyTower = false;
     }
 
     if (counter === 2) {
         selectDestinyTower = true;
     }
-
     
 }
 
@@ -139,11 +138,21 @@ const checkWidthDisc = (origin, destiny) => {
 
 /* CONDIÇÃO DE VITÓRIA */
 
+let getTorreTres = document.getElementById('torreTres');
+
+if (getTorreTres.childElementCount >= 4) {
+    win();
+}
+
+// A condição de vitória não é valida...
+
 const win = () => {
-    let getTowerThree = towerThree;
-    if (getTowerThree.childElementCount === 5) {
-        console.log("You Win!!!");
-    }
+    let getContainer = document.getElementById('container');
+    let winDiv = document.createElement('div');
+    winDiv.innerHTML = 'YOU WIN!!!';
+    getContainer.appendChild(winDiv);
+    winSpan.classList('win');
+    console.log("VITÓRIA");
 }
 
 /* CONDIÇÃO DE VITÓRIA */
