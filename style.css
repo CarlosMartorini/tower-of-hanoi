@@ -33,6 +33,13 @@ header{
     height: 70px;
     font-size: 40px;
 }
+
+.win{
+    font-size: 20px;
+    color: green;
+    border: 1px dashed green;
+    z-index: 5;
+}
 /* ESTILIZAÇÃO GERAL */
 
 
