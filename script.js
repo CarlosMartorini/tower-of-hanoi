@@ -32,10 +32,10 @@ const addDisc = (discId, color) => {
     disc.style.backgroundColor = color;
 }
 
-addDisc('disc1', '#a52a5a');
-addDisc('disc2', '#000090');
-addDisc('disc3', '#9400d3');
-addDisc('disc4', '#329237');
+addDisc('disc4', '#d8d534');
+addDisc('disc3', '#000090');
+addDisc('disc2', '#9400d3');
+addDisc('disc1', '#329237');
 
 /* CRIAÇÃO DOS DISCOS */
 
@@ -64,7 +64,7 @@ const selectTower = (event) => {
 
     console.log(event.currentTarget, 
                 event.currentTarget.childElementCount, 
-                event.currentTarget.childNodes[1],
+                event.currentTarget.childNodes,
                 counter, 
                 selectDestinyTower
                 );
@@ -104,11 +104,15 @@ for (let i = 0; i < towerThree.length; i++) {
 
 /* LÓGICA DE JOGO / VERIFICAÇÕES */
 
+
 const changeTower = (origin, destiny) => { 
+
     let getOrigin = origin;
+
+    let indexOrigin = getOrigin.childNodes.length - 1;
     
     if (selectDestinyTower === true) {
-        let getLastDisc = getOrigin.childNodes[1];
+        let getLastDisc = getOrigin.childNodes[indexOrigin];
         destiny.appendChild(getLastDisc);
     }
     
@@ -117,12 +121,15 @@ const changeTower = (origin, destiny) => {
 const checkWidthDisc = (origin, destiny) => {
     let getOrigin = origin
     let getDestiny = destiny;
+
+    let indexDestiny = getDestiny.childNodes.length - 1;
+    let indexOrigin = getOrigin.childNodes.length - 1;
     
-    if (getDestiny.childNodes[1] === undefined) {
+    if (getDestiny.childNodes[indexDestiny] === undefined) {
         changeTower(origin, destiny);
-    } else if (getDestiny.childNodes[1].clientWidth > getOrigin.childNodes[1].clientWidth) {
+    } else if (getDestiny.childNodes[indexDestiny].clientWidth > getOrigin.childNodes[indexOrigin].clientWidth) {
         changeTower(origin, destiny);
-    } else if (getDestiny.childNodes[1].clientWidth < getOrigin.childNodes[1].clientWidth) {
+    } else if (getDestiny.childNodes[indexDestiny].clientWidth < getOrigin.childNodes[indexOrigin].clientWidth) {
         console.log('Não pode ser efetuada a troca');
     }
 }
