@@ -35,7 +35,8 @@ header{
 }
 
 .win{
-    font-size: 20px;
+    text-align: center;
+    font-size: 100px;
     color: green;
     border: 1px dashed green;
     z-index: 5;

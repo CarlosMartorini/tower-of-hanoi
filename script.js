@@ -11,7 +11,6 @@ criarColunaDaTorre("torreTres");
 
 function criarTorre(torreId){
     let img = document.createElement("IMG");
-    img.src = "/assets/torre.png";
     img.setAttribute("id", "torreBG");
     document.getElementById(torreId).appendChild(img);
 }
@@ -83,6 +82,8 @@ const selectTower = (event) => {
     if (counter === 2) {
         selectDestinyTower = true;
     }
+
+    win();
     
 }
 
@@ -140,19 +141,19 @@ const checkWidthDisc = (origin, destiny) => {
 
 let getTorreTres = document.getElementById('torreTres');
 
-if (getTorreTres.childElementCount >= 4) {
-    win();
-}
+
 
 // A condição de vitória não é valida...
 
 const win = () => {
-    let getContainer = document.getElementById('container');
-    let winDiv = document.createElement('div');
-    winDiv.innerHTML = 'YOU WIN!!!';
-    getContainer.appendChild(winDiv);
-    winSpan.classList('win');
-    console.log("VITÓRIA");
+    if (getTorreTres.childElementCount >= 4) {
+        let getContainer = document.getElementById('container');
+        let winDiv = document.createElement('div');
+        winDiv.innerHTML = 'YOU WIN!!!';
+        getContainer.appendChild(winDiv);
+        winDiv.classList.add('win');
+        console.log("VITÓRIA");    
+    }
 }
 
 /* CONDIÇÃO DE VITÓRIA */
